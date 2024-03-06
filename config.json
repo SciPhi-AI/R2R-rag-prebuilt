@@ -1,0 +1,22 @@
+{
+  "database": {
+    "provider": "sciphi"
+  },
+  "evals": {
+    "provider": "deepeval",
+    "frequency": 1.0
+  },
+  "embedding": {
+    "provider": "openai",
+    "model": "text-embedding-3-small",
+    "dimension": 1536,
+    "batch_size": 32
+  },
+  "text_splitter": {
+    "chunk_size": 512,
+    "chunk_overlap": 20
+  },
+  "language_model": {
+    "provider": "litellm"
+  }
+}
