@@ -1,6 +1,6 @@
 {
   "database": {
-    "provider": "sciphi"
+    "provider": "pgvector"
   },
   "evals": {
     "provider": "deepeval",
