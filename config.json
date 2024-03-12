@@ -19,11 +19,11 @@
   },
   "language_model": {
     "provider": "litellm"
-  },  
+  },
   "logging_database": {
-    "provider": "sciphi",
+    "provider": "sciphi"
   },
   "vector_database": {
     "provider": "sciphi"
-  },  
+  }
 }
