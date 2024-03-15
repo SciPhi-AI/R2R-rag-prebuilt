@@ -25,5 +25,8 @@
   },
   "vector_database": {
     "provider": "sciphi"
-  }
+  },
+  "app": {
+    "max_logs": 100
+  }  
 }
