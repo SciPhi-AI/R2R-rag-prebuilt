@@ -1,1 +1,1 @@
-r2r[parsing,eval]
+git+https://github.com/SciPhi-AI/R2R.git#egg=r2r[eval,parsing]
