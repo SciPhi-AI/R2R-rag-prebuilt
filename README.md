@@ -2,7 +2,16 @@
 
 This directory contains the necessary files to deploy a basic RAG pipeline using the R2R framework with the SciPhi cloud platform.
 
-To test this directoy locall, run the installation with `pip install -r requirements.txt` and then launch the server with `uvicorn src.app:app`
+To test this application locally, run the following
+```bash
+# Install
+pip install -r requirements.txt
+
+# Launch
+uvicorn src.app:app
+```
+[Visit here](https://r2r-docs.sciphi.ai/core-features/app) for more information on how to customize your application.
+
 ## File Structure
 
 The main files in this directory are:
