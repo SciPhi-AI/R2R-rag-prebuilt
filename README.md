@@ -1,4 +1,4 @@
-# README
+# README 
 
 This directory contains the necessary files to deploy a basic RAG pipeline using the R2R framework with the SciPhi cloud platform.
 
