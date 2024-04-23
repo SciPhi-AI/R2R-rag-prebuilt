@@ -3,8 +3,7 @@
     "provider": "litellm"
   },
   "vector_database": {
-    "provider": "local",
-    "collection_name": "demo_vecs"
+    "provider": "sciphi"
   },
   "ingestion":{
     "provider": "local"
@@ -29,8 +28,6 @@
     "max_file_size_in_mb": 100
   },
   "logging_database": {
-    "provider": "local",
-    "collection_name": "demo_logs",
-    "level": "INFO"
+    "provider": "sciphi"
   }
 }
