@@ -1,10 +1,13 @@
+import os
 from r2r.main import E2EPipelineFactory, R2RConfig
 
 # Loads the local configuration file
 config = R2RConfig.load_config("config.json")
 
+env_setting = os.getenv("RAG_PIPELINE", None)
+
 # Selects the pipeline to use
-rag_pipeline = config.app.get("rag_pipeline", "qna")
+rag_pipeline = env_setting or config.app.get("rag_pipeline", "qna")
 if rag_pipeline == "qna":
     from r2r.pipelines import QnARAGPipeline
     rag_pipeline_impl = QnARAGPipeline
