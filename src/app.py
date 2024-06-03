@@ -1,5 +1,4 @@
 import os
-import logging
 from enum import Enum
 from r2r import (
     R2RConfig,
@@ -11,16 +10,15 @@ from r2r import (
     R2RPipeFactoryWithMultiSearch
 )
 
-logger = logging.getLogger(__name__)
-
-current_file_path = os.path.dirname(__file__)
 
 class RagPipeline(Enum):
     QNA = "qna"
     WEB = "web"
     HYDE = "hyde"
 
-def r2r_app( rag_pipeline: RagPipeline = RagPipeline.QNA):
+def r2r_app():
+    rag_pipeline = RagPipeline(os.getenv("RAG_PIPELINE", "qna"))
+    
     config = R2RConfig.from_json("config.json")
 
     if rag_pipeline == RagPipeline.QNA:
@@ -37,3 +35,5 @@ def r2r_app( rag_pipeline: RagPipeline = RagPipeline.QNA):
                 # Add optional override arguments which propagate to the pipe factory
                 task_prompt_name="hyde",
             )
+
+app = r2r_app()
