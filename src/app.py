@@ -36,4 +36,4 @@ def r2r_app():
                 task_prompt_name="hyde",
             )
 
-app = r2r_app()
+app = r2r_app().app
