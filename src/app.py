@@ -21,7 +21,7 @@ class RagPipeline(Enum):
     HYDE = "hyde"
 
 def r2r_app( rag_pipeline: RagPipeline = RagPipeline.QNA):
-    config = R2RConfig.from_json('config.json')
+    config = R2RConfig.from_json("config.json")
 
     if rag_pipeline == RagPipeline.QNA:
         return R2RAppBuilder(config).build()
