@@ -5,6 +5,9 @@
   "logging_database": {
     "provider": "sciphi"
   },
+  "kg": {
+    "provider": "None"
+  },  
   "vector_database": {
     "provider": "sciphi"
   }
