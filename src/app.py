@@ -6,6 +6,7 @@ from r2r import (
     # For Web Search
     WebSearchPipe,
     SerperClient,
+    get_r2r_app,
     # For HyDE & the like.
     R2RPipeFactoryWithMultiSearch
 )
@@ -22,18 +23,14 @@ def r2r_app():
     config = R2RConfig.from_json("config.json")
 
     if rag_pipeline == RagPipeline.QNA:
-        return R2RAppBuilder(config).build()
+        return get_r2r_app(R2RAppBuilder(config))
     elif rag_pipeline == RagPipeline.WEB:
         # Create search pipe override and pipes
         web_search_pipe = WebSearchPipe(
             serper_client=SerperClient()  # TODO - Develop a `WebSearchProvider` for configurability
         )
-        return R2RAppBuilder(config).with_search_pipe(web_search_pipe).build()
+        return get_r2r_app(R2RAppBuilder(config).with_search_pipe(web_search_pipe))
     elif rag_pipeline == RagPipeline.HYDE:
-        return R2RAppBuilder(config).with_pipe_factory(R2RPipeFactoryWithMultiSearch) \
-            .build(
-                # Add optional override arguments which propagate to the pipe factory
-                task_prompt_name="hyde",
-            )
+        return get_r2r_app(R2RAppBuilder(config).with_pipe_factory(R2RPipeFactoryWithMultiSearch), task_prompt_name="hyde")
 
 app = r2r_app().app
