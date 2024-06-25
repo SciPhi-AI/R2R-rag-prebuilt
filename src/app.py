@@ -4,7 +4,7 @@ from r2r import (
     R2RConfig,
     R2RAppBuilder,
     # For Web Search
-    R2RWebSearchPipe,
+    WebSearchPipe,
     SerperClient,
     # For HyDE & the like.
     R2RPipeFactoryWithMultiSearch
@@ -25,7 +25,7 @@ def r2r_app():
         return R2RAppBuilder(config).build()
     elif rag_pipeline == RagPipeline.WEB:
         # Create search pipe override and pipes
-        web_search_pipe = R2RWebSearchPipe(
+        web_search_pipe = WebSearchPipe(
             serper_client=SerperClient()  # TODO - Develop a `WebSearchProvider` for configurability
         )
         return R2RAppBuilder(config).with_search_pipe(web_search_pipe).build()
