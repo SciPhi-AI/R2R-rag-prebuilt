@@ -28,7 +28,7 @@ def r2r_app():
         web_search_pipe = WebSearchPipe(
             serper_client=SerperClient()  # TODO - Develop a `WebSearchProvider` for configurability
         )
-        return R2RBuilder(config).with_search_pipe(web_search_pipe).build().app
+        return R2RBuilder(config).with_vector_search_pipe(web_search_pipe).build().app
     elif rag_pipeline == RagPipeline.HYDE:
         return R2RBuilder(config).with_pipe_factory(R2RPipeFactoryWithMultiSearch) \
             .build(
