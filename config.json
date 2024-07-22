@@ -1,14 +1,11 @@
 {
-  "app": {
-    "rag_pipeline": "qna"
-  },
   "logging_database": {
     "provider": "sciphi"
   },
   "kg": {
     "provider": "None"
   },  
-  "vector_database": {
+  "database": {
     "provider": "sciphi"
   }
 }
