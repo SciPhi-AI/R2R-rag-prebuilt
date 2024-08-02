@@ -19,7 +19,7 @@ class RagPipeline(Enum):
 def r2r_app():
     rag_pipeline = RagPipeline(os.getenv("RAG_PIPELINE", "qna"))
     
-    config = R2RConfig.from_json("config.json")
+    config = R2RConfig.from_toml("config.toml")
 
     if rag_pipeline == RagPipeline.QNA:
         return R2RBuilder(config).build().app
