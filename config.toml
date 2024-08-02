@@ -1,0 +1,8 @@
+[logging_database]
+provider = "sciphi"
+
+[kg]
+provider = "None"
+
+[database]
+provider = "sciphi"
