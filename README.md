@@ -1,4 +1,4 @@
-# README 
+# Default R2R Template 
 
 This directory contains the necessary files to deploy a basic R2R application within the SciPhi cloud.
 
