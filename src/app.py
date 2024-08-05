@@ -17,23 +17,8 @@ class RagPipeline(Enum):
     HYDE = "hyde"
 
 def r2r_app():
-    rag_pipeline = RagPipeline(os.getenv("RAG_PIPELINE", "qna"))
     
     config = R2RConfig.from_toml("r2r.toml")
-
-    if rag_pipeline == RagPipeline.QNA:
-        return R2RBuilder(config).build().app
-    elif rag_pipeline == RagPipeline.WEB:
-        # Create search pipe override and pipes
-        web_search_pipe = WebSearchPipe(
-            serper_client=SerperClient()  # TODO - Develop a `WebSearchProvider` for configurability
-        )
-        return R2RBuilder(config).with_vector_search_pipe(web_search_pipe).build().app
-    elif rag_pipeline == RagPipeline.HYDE:
-        return R2RBuilder(config).with_pipe_factory(R2RPipeFactoryWithMultiSearch) \
-            .build(
-                # Add optional override arguments which propagate to the pipe factory
-                task_prompt_name="hyde",
-            ).app
+    return R2RBuilder(config).build().app
 
 app = r2r_app().app
