@@ -7,6 +7,6 @@ from r2r import (
 
 def r2r_app():
     config = R2RConfig.from_toml("r2r.toml")
-    return R2RBuilder(config).build().app
+    return R2RBuilder(config).build()
 
-app = r2r_app().app
+app = r2r_app().fapp
