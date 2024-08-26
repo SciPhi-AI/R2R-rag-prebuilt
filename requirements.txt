@@ -1,1 +1,1 @@
-git+https://github.com/emrgnt-cmplxty/R2R#subdirectory=py&egg=r2r
+git+https://github.com/emrgnt-cmplxty/R2R#subdirectory=py&egg=r2r[core]
