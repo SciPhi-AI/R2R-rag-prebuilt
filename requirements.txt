@@ -1,1 +1,1 @@
-r2r[core]>=0.3.4,<0.4.0
+git+https://github.com/SciPhi-AI/R2R.git#subdirectory=py&egg=r2r
